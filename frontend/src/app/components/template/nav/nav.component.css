@@ -1,0 +1,23 @@
+
+.sidenav {
+    background-color: rgba(233, 233, 235, 0.847);
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.sidenav a {
+    color: #f8f9fa;
+}
+
+.sidenav a:hover{
+    background-color: rgb(233, 233, 235);
+    transition: 1s;
+    color: #6C757D;
+    padding-left: 30px;
+}
+
+.mat-nav-list{
+    color: red;
+  }

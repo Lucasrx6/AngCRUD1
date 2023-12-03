@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    width: 100%;
+    padding-left: -30px;
+}
+.header {
+    align-items: center;
+    background: #343a40;
+    color: #f8f9fa;
+    position: fixed;
+}
+
+.header a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.header .logo {
+    max-width: 150px;
+
+}
+
+.header .titulo {
+    padding-left: 30px;
+}
+
+.mat-toolbar {
+    background: #343a40;
+}
