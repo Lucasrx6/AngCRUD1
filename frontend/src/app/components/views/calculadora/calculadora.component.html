@@ -1,4 +1,30 @@
 <mat-card class="home mat-elevation-z3">
-    <mat-card-title class="title">Bem Vindo!</mat-card-title>
-    <mat-card-subtitle class="subtitle"> Aqui será colocado a Calculadora</mat-card-subtitle>
+    <mat-card-title class="title">Calculadora</mat-card-title>
+    <mat-card-subtitle class="subtitle"></mat-card-subtitle>
+    
+    <div class="container">
+        <div class="calculator">
+            <h3>Calculadora</h3>
+            <input type="text" [(ngModel)]="tela" id="tela" placeholder="0">
+            <div class="buttons">
+                <button class="operador" (click)="DigitoTela('/')">/</button>
+                <button class="operador" (click)="DigitoTela('*')">x</button>
+                <button class="operador" (click)="DigitoTela('-')">-</button>
+                <button class="operador" (click)="DigitoTela('+')">+</button>
+                <button (click)="DigitoTela('1')">1</button>
+                <button (click)="DigitoTela('2')">2</button>
+                <button (click)="DigitoTela('3')">3</button>
+                <button (click)="DigitoTela('4')">4</button>
+                <button (click)="DigitoTela('5')">5</button>
+                <button (click)="DigitoTela('6')">6</button>        
+                <button (click)="DigitoTela('7')">7</button>
+                <button (click)="DigitoTela('8')">8</button>
+                <button (click)="DigitoTela('9')">9</button>
+                <button (click)="DigitoTela('0')">0</button>
+                <button (click)="DigitoTela('.')">.</button>
+                <button class="operador" (click)="calculaResultado()">=</button>
+            </div>
+            <button class="limpa" (click)="limparTela()">Limpar tela</button>
+        </div>
+    </div>
 </mat-card>

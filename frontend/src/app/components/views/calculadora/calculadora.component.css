@@ -1,4 +1,84 @@
 .home{
-    margin: 3rem;
-    padding: 3rem;
+    margin: 1.5rem;
+    padding: 1.5rem;
+    max-height: 800px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+.container{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+.calculator {
+    width: 30%;
+    height: 350px;
+    text-align: center;
+    justify-content: center;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 3rem;
+    border: 1px solid;
+    margin-top: 3rem;
+    border-radius: 10px;
+}
+
+#tela {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);/* Divide os botões em 4 colunas */
+    grid-gap: 5px;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgba(211, 211, 211, 0.74);
+    transition: .4s;
+}
+
+button:hover {
+    cursor: pointer;
+    background: #fff;
+    transition: .4s;
+    color: #549467;
+}
+
+.operador {
+    background-color: #549467; /* Cor dos botões de operações */
+    color: whitesmoke;
+}
+
+.limpa {
+    margin-top: 15px;
+    background-color: #18572b; /* Cor do botão de limpar a tela */
+    color: whitesmoke;
 }

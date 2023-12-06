@@ -1,7 +1,15 @@
 
 
-<mat-card class="home mat-elevation-z3">
-    <button mat-raised-button (click) ="navigateToProdutoCreate()"> Novo Produto </button>
+<mat-card class="home mat-elevation-z8">
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click) ="navegarProdutoCreate()"> Novo Produto </button>
+        <button mat-raised-button color="warn" (click) ="navegarProdutoCreateQuerystring()"> QueryString </button>
+    </mat-card-actions> 
+
     <mat-card-title class="title">Tela de Produtos</mat-card-title>
     <mat-card-subtitle class="subtitle"> Sistema de Cadastro</mat-card-subtitle>
+
+    <app-produto-read></app-produto-read>
+
 </mat-card>
+
