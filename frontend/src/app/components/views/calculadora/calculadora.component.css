@@ -1,6 +1,6 @@
 .home{
     margin: 1.5rem;
-    padding: 1.5rem;
+    padding: .5rem;
     max-height: 800px;
 }
 
@@ -24,20 +24,27 @@ body {
 
 }
 
-
-
 .calculator {
     width: 30%;
     height: 350px;
     text-align: center;
     justify-content: center;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-left: 20px;
     padding-right: 20px;
     margin-left: 3rem;
     border: 1px solid;
-    margin-top: 3rem;
+    margin-top: .1rem;
+    margin-right: 20rem;
+    margin-left: 20rem;
     border-radius: 10px;
+    background-color: #343a40;
+}
+
+.calculator h3 {
+
+    color: #fff;
+
 }
 
 #tela {
@@ -73,12 +80,22 @@ button:hover {
 }
 
 .operador {
-    background-color: #549467; /* Cor dos botões de operações */
+    background-color: #026e81; /* Cor dos botões de operações */
     color: whitesmoke;
 }
 
 .limpa {
     margin-top: 15px;
-    background-color: #18572b; /* Cor do botão de limpar a tela */
+    background-color: #026e81; /* Cor do botão de limpar a tela */
     color: whitesmoke;
+}
+
+.calculadora{
+    max-height: 400px;
+    margin: 1.5rem;
+    padding: 1rem;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

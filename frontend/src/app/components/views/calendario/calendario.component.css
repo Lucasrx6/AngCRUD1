@@ -1,4 +1,31 @@
 .home{
-    margin: 3rem;
-    padding: 3rem;
+    margin: 1.4rem;
+    padding: .5rem;
+}
+
+.principal{
+    margin: 1.4rem;
+    padding: 0.4rem;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.calendario, .interaction{
+    flex: 1 0 auto;
+    margin: 1.4rem;
+    padding: 0.4rem;
+    max-width: calc(40% - 1.8rem);
+    max-height: 400px;
+}
+
+.interaction{
+    flex: 1 0 auto;
+    margin: 1.4rem;
+    padding: 0.4rem;
+    max-width: calc(60% - 1.8rem);
+    max-height: 400px;
+
 }

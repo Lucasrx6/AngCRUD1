@@ -1,9 +1,14 @@
 .home{
-    margin: 3rem;
-    padding: 3rem;
+    margin: 1.5rem;
+    padding: .5rem;
 }
 
-.home button {
+.produtos button {
     margin: 10px;
     padding: 15px;
+}
+
+.produtos{
+    margin: 1.5rem;
+    padding: 1rem;
 }
