@@ -1,6 +1,12 @@
 .home{
-    margin: 3rem;
-    padding: 3rem;
+    margin: 1.4rem;
+    padding: .5rem;
+}
+
+
+.deleta{
+    margin: 1.4rem;
+    padding: .5rem;
 }
 
 form {

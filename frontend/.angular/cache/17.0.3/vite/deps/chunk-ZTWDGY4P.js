@@ -1,11 +1,10 @@
 import {
   DOCUMENT,
   isPlatformBrowser
-} from "./chunk-WJWK4BZO.js";
+} from "./chunk-KD4IROK2.js";
 import {
   ANIMATION_MODULE_TYPE,
   APP_ID,
-  BehaviorSubject,
   CSP_NONCE,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -20,31 +19,16 @@ import {
   LOCALE_ID,
   NgModule,
   NgZone,
-  Observable,
   Optional,
   Output,
   PLATFORM_ID,
   QueryList,
-  Subject,
-  Subscription,
   Version,
   ViewChild,
   ViewEncapsulation$1,
   booleanAttribute,
-  combineLatest,
-  concat,
-  debounceTime,
-  distinctUntilChanged,
-  filter,
   inject,
-  map,
-  of,
   setClassMetadata,
-  skip,
-  startWith,
-  take,
-  takeUntil,
-  tap,
   ɵɵInputTransformsFeature,
   ɵɵNgOnChangesFeature,
   ɵɵProvidersFeature,
@@ -74,34 +58,29 @@ import {
   ɵɵtext,
   ɵɵtextInterpolate1,
   ɵɵviewQuery
-} from "./chunk-QWPTUITJ.js";
+} from "./chunk-RJTOMZPY.js";
+import {
+  BehaviorSubject,
+  Observable,
+  Subject,
+  Subscription,
+  combineLatest,
+  concat,
+  debounceTime,
+  distinctUntilChanged,
+  filter,
+  map,
+  of,
+  skip,
+  startWith,
+  take,
+  takeUntil,
+  tap
+} from "./chunk-AFRS2OIU.js";
 import {
   __spreadProps,
   __spreadValues
 } from "./chunk-HSNDBVJ3.js";
-
-// node_modules/@angular/cdk/fesm2022/coercion.mjs
-function coerceBooleanProperty(value) {
-  return value != null && `${value}` !== "false";
-}
-function coerceNumberProperty(value, fallbackValue = 0) {
-  return _isNumberValue(value) ? Number(value) : fallbackValue;
-}
-function _isNumberValue(value) {
-  return !isNaN(parseFloat(value)) && !isNaN(Number(value));
-}
-function coerceArray(value) {
-  return Array.isArray(value) ? value : [value];
-}
-function coerceCssPixelValue(value) {
-  if (value == null) {
-    return "";
-  }
-  return typeof value === "string" ? value : `${value}px`;
-}
-function coerceElement(elementOrRef) {
-  return elementOrRef instanceof ElementRef ? elementOrRef.nativeElement : elementOrRef;
-}
 
 // node_modules/@angular/cdk/fesm2022/platform.mjs
 var hasV8BreakIterator;
@@ -315,6 +294,7 @@ function _isTestEnvironment() {
 }
 
 // node_modules/@angular/cdk/fesm2022/keycodes.mjs
+var BACKSPACE = 8;
 var TAB = 9;
 var ENTER = 13;
 var SHIFT = 16;
@@ -341,6 +321,42 @@ function hasModifierKey(event, ...modifiers) {
     return modifiers.some((modifier) => event[modifier]);
   }
   return event.altKey || event.shiftKey || event.ctrlKey || event.metaKey;
+}
+
+// node_modules/@angular/cdk/fesm2022/coercion.mjs
+function coerceBooleanProperty(value) {
+  return value != null && `${value}` !== "false";
+}
+function coerceNumberProperty(value, fallbackValue = 0) {
+  return _isNumberValue(value) ? Number(value) : fallbackValue;
+}
+function _isNumberValue(value) {
+  return !isNaN(parseFloat(value)) && !isNaN(Number(value));
+}
+function coerceArray(value) {
+  return Array.isArray(value) ? value : [value];
+}
+function coerceCssPixelValue(value) {
+  if (value == null) {
+    return "";
+  }
+  return typeof value === "string" ? value : `${value}px`;
+}
+function coerceElement(elementOrRef) {
+  return elementOrRef instanceof ElementRef ? elementOrRef.nativeElement : elementOrRef;
+}
+function coerceStringArray(value, separator = /\s+/) {
+  const result = [];
+  if (value != null) {
+    const sourceValues = Array.isArray(value) ? value : `${value}`.split(separator);
+    for (const sourceValue of sourceValues) {
+      const trimmedString = `${sourceValue}`.trim();
+      if (trimmedString) {
+        result.push(trimmedString);
+      }
+    }
+  }
+  return result;
 }
 
 // node_modules/@angular/cdk/fesm2022/observers.mjs
@@ -3152,6 +3168,20 @@ function _checkCdkVersionMatch() {
     console.warn("The Angular Material version (" + VERSION2.full + ") does not match the Angular CDK version (" + VERSION.full + ").\nPlease ensure the versions of these two packages exactly match.");
   }
 }
+function mixinDisabled(base) {
+  return class extends base {
+    get disabled() {
+      return this._disabled;
+    }
+    set disabled(value) {
+      this._disabled = coerceBooleanProperty(value);
+    }
+    constructor(...args) {
+      super(...args);
+      this._disabled = false;
+    }
+  };
+}
 function mixinColor(base, defaultColor) {
   return class extends base {
     get color() {
@@ -3176,6 +3206,36 @@ function mixinColor(base, defaultColor) {
     }
   };
 }
+function mixinDisableRipple(base) {
+  return class extends base {
+    /** Whether the ripple effect is disabled or not. */
+    get disableRipple() {
+      return this._disableRipple;
+    }
+    set disableRipple(value) {
+      this._disableRipple = coerceBooleanProperty(value);
+    }
+    constructor(...args) {
+      super(...args);
+      this._disableRipple = false;
+    }
+  };
+}
+function mixinTabIndex(base, defaultTabIndex = 0) {
+  return class extends base {
+    get tabIndex() {
+      return this.disabled ? -1 : this._tabIndex;
+    }
+    set tabIndex(value) {
+      this._tabIndex = value != null ? coerceNumberProperty(value) : this.defaultTabIndex;
+    }
+    constructor(...args) {
+      super(...args);
+      this._tabIndex = defaultTabIndex;
+      this.defaultTabIndex = defaultTabIndex;
+    }
+  };
+}
 function mixinErrorState(base) {
   return class extends base {
     /** Updates the error state based on the provided error state matcher. */
@@ -3193,6 +3253,40 @@ function mixinErrorState(base) {
     constructor(...args) {
       super(...args);
       this.errorState = false;
+    }
+  };
+}
+function mixinInitialized(base) {
+  return class extends base {
+    constructor(...args) {
+      super(...args);
+      this._isInitialized = false;
+      this._pendingSubscribers = [];
+      this.initialized = new Observable((subscriber) => {
+        if (this._isInitialized) {
+          this._notifySubscriber(subscriber);
+        } else {
+          this._pendingSubscribers.push(subscriber);
+        }
+      });
+    }
+    /**
+     * Marks the state as initialized and notifies pending subscribers. Should be called at the end
+     * of ngOnInit.
+     * @docs-private
+     */
+    _markInitialized() {
+      if (this._isInitialized && (typeof ngDevMode === "undefined" || ngDevMode)) {
+        throw Error("This directive has already been marked as initialized and should not be called twice.");
+      }
+      this._isInitialized = true;
+      this._pendingSubscribers.forEach(this._notifySubscriber);
+      this._pendingSubscribers = null;
+    }
+    /** Emits and completes the subscriber stream (should only emit once). */
+    _notifySubscriber(subscriber) {
+      subscriber.next();
+      subscriber.complete();
     }
   };
 }
@@ -3632,6 +3726,23 @@ var MatLine = _MatLine;
     }]
   }], null, null);
 })();
+function setLines(lines, element, prefix = "mat") {
+  lines.changes.pipe(startWith(lines)).subscribe(({
+    length
+  }) => {
+    setClass(element, `${prefix}-2-line`, false);
+    setClass(element, `${prefix}-3-line`, false);
+    setClass(element, `${prefix}-multi-line`, false);
+    if (length === 2 || length === 3) {
+      setClass(element, `${prefix}-${length}-line`, true);
+    } else if (length > 3) {
+      setClass(element, `${prefix}-multi-line`, true);
+    }
+  });
+}
+function setClass(element, className, isAdd) {
+  element.nativeElement.classList.toggle(className, isAdd);
+}
 var _MatLineModule = class _MatLineModule {
 };
 _MatLineModule.ɵfac = function MatLineModule_Factory(t) {
@@ -4706,6 +4817,29 @@ var MatOption = _MatOption;
     }]
   });
 })();
+function _countGroupLabelsBeforeOption(optionIndex, options, optionGroups) {
+  if (optionGroups.length) {
+    let optionsArray = options.toArray();
+    let groups = optionGroups.toArray();
+    let groupCounter = 0;
+    for (let i = 0; i < optionIndex + 1; i++) {
+      if (optionsArray[i].group && optionsArray[i].group === groups[groupCounter]) {
+        groupCounter++;
+      }
+    }
+    return groupCounter;
+  }
+  return 0;
+}
+function _getOptionScrollPosition(optionOffset, optionHeight, currentScrollPosition, panelHeight) {
+  if (optionOffset < currentScrollPosition) {
+    return optionOffset;
+  }
+  if (optionOffset + optionHeight > currentScrollPosition + panelHeight) {
+    return Math.max(0, optionOffset - panelHeight + optionHeight);
+  }
+  return currentScrollPosition;
+}
 var _MatOptionModule = class _MatOptionModule {
 };
 _MatOptionModule.ɵfac = function MatOptionModule_Factory(t) {
@@ -4852,12 +4986,6 @@ var MatRippleLoader = _MatRippleLoader;
 })();
 
 export {
-  coerceBooleanProperty,
-  coerceNumberProperty,
-  _isNumberValue,
-  coerceArray,
-  coerceCssPixelValue,
-  coerceElement,
   Platform,
   getSupportedInputTypes,
   normalizePassiveListenerOptions,
@@ -4866,11 +4994,27 @@ export {
   _getFocusedElementPierceShadowDom,
   _getEventTarget,
   _isTestEnvironment,
+  BACKSPACE,
   ENTER,
   ESCAPE,
   SPACE,
+  PAGE_UP,
+  PAGE_DOWN,
+  END,
+  HOME,
+  LEFT_ARROW,
+  UP_ARROW,
+  RIGHT_ARROW,
+  DOWN_ARROW,
   A,
   hasModifierKey,
+  coerceBooleanProperty,
+  coerceNumberProperty,
+  _isNumberValue,
+  coerceArray,
+  coerceCssPixelValue,
+  coerceElement,
+  coerceStringArray,
   CdkObserveContent,
   ObserversModule,
   BreakpointObserver,
@@ -4878,18 +5022,53 @@ export {
   FocusKeyManager,
   InteractivityChecker,
   FocusTrapFactory,
+  CdkTrapFocus,
   LiveAnnouncer,
   FocusMonitor,
+  CdkMonitorFocus,
+  A11yModule,
   Directionality,
   BidiModule,
+  VERSION2 as VERSION,
+  AnimationCurves,
+  AnimationDurations,
+  MATERIAL_SANITY_CHECKS,
   MatCommonModule,
+  mixinDisabled,
   mixinColor,
+  mixinDisableRipple,
+  mixinTabIndex,
   mixinErrorState,
+  mixinInitialized,
+  MAT_DATE_LOCALE,
+  MAT_DATE_LOCALE_FACTORY,
+  DateAdapter,
+  MAT_DATE_FORMATS,
+  NativeDateAdapter,
+  MAT_NATIVE_DATE_FORMATS,
+  NativeDateModule,
+  MatNativeDateModule,
+  ShowOnDirtyErrorStateMatcher,
   ErrorStateMatcher,
+  MatLine,
+  setLines,
+  MatLineModule,
+  RippleRef,
+  defaultRippleAnimationConfig,
   RippleRenderer,
   MAT_RIPPLE_GLOBAL_OPTIONS,
+  MatRipple,
   MatRippleModule,
+  MatPseudoCheckbox,
   MatPseudoCheckboxModule,
+  MAT_OPTION_PARENT_COMPONENT,
+  MAT_OPTGROUP,
+  MatOptgroup,
+  MatOptionSelectionChange,
+  MatOption,
+  _countGroupLabelsBeforeOption,
+  _getOptionScrollPosition,
+  MatOptionModule,
   MatRippleLoader
 };
-//# sourceMappingURL=chunk-IJYN2AFP.js.map
+//# sourceMappingURL=chunk-ZTWDGY4P.js.map

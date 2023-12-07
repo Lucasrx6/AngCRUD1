@@ -3,7 +3,7 @@ import {
   _RecycleViewRepeaterStrategy,
   _VIEW_REPEATER_STRATEGY,
   isDataSource
-} from "./chunk-7CKKQVFZ.js";
+} from "./chunk-PXZYS7HY.js";
 import {
   BidiModule,
   Directionality,
@@ -12,10 +12,10 @@ import {
   coerceNumberProperty,
   getRtlScrollAxisType,
   supportsScrollBehavior
-} from "./chunk-IJYN2AFP.js";
+} from "./chunk-ZTWDGY4P.js";
 import {
   DOCUMENT
-} from "./chunk-WJWK4BZO.js";
+} from "./chunk-KD4IROK2.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -29,33 +29,17 @@ import {
   IterableDiffers,
   NgModule,
   NgZone,
-  Observable,
   Optional,
   Output,
   SkipSelf,
-  Subject,
-  Subscription,
   TemplateRef,
   ViewChild,
   ViewContainerRef,
   ViewEncapsulation$1,
-  animationFrameScheduler,
-  asapScheduler,
-  auditTime,
   booleanAttribute,
-  distinctUntilChanged,
-  filter,
   forwardRef,
-  fromEvent,
   inject,
-  isObservable,
-  of,
-  pairwise,
   setClassMetadata,
-  shareReplay,
-  startWith,
-  switchMap,
-  takeUntil,
   ɵɵInheritDefinitionFeature,
   ɵɵInputTransformsFeature,
   ɵɵNgOnChangesFeature,
@@ -79,7 +63,25 @@ import {
   ɵɵqueryRefresh,
   ɵɵstyleProp,
   ɵɵviewQuery
-} from "./chunk-QWPTUITJ.js";
+} from "./chunk-RJTOMZPY.js";
+import {
+  Observable,
+  Subject,
+  Subscription,
+  animationFrameScheduler,
+  asapScheduler,
+  auditTime,
+  distinctUntilChanged,
+  filter,
+  fromEvent,
+  isObservable,
+  of,
+  pairwise,
+  shareReplay,
+  startWith,
+  switchMap,
+  takeUntil
+} from "./chunk-AFRS2OIU.js";
 
 // node_modules/@angular/cdk/fesm2022/scrolling.mjs
 var _c0 = ["contentWrapper"];
@@ -1606,4 +1608,4 @@ export {
   CdkScrollableModule,
   ScrollingModule
 };
-//# sourceMappingURL=chunk-K6DTWNPT.js.map
+//# sourceMappingURL=chunk-MIVODICN.js.map
