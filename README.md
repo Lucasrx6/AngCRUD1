@@ -15,16 +15,20 @@ Ele é uma maneira de demonstrar meu trabalho e compartilhar meus projetos com o
 ## Prints
 
 ### Tela Inicial:
-![image](https://github.com/Lucasrx6/AngCRUD1/assets/86980974/f7608b08-28b2-4912-a465-b77a7e425546)
+![image](https://github.com/Lucasrx6/AngCRUD1/assets/86980974/432ae3c5-fdda-44b5-8a28-57f250665096)
+
 
 ### Tarefa Calculadora:
-![image](https://github.com/Lucasrx6/AngCRUD1/assets/86980974/5ee0d170-13ad-4daa-b6e8-c0ee8468410d)
+![image](https://github.com/Lucasrx6/AngCRUD1/assets/86980974/d7ad8de5-b333-4a13-bbb7-925d796213d4)
+
 
 ### Tarefa Calendario:
-![image](https://github.com/Lucasrx6/AngCRUD1/assets/86980974/53e0377a-888e-4924-add5-8e84b4907b38)
+![image](https://github.com/Lucasrx6/AngCRUD1/assets/86980974/d0ccd4e4-ac57-4b00-9163-5819c6ebd64a)
+
 
 ### Tarefa CRUD:
-![image](https://github.com/Lucasrx6/AngCRUD1/assets/86980974/052f5b33-b66f-440d-98fc-9a01f5d2e5ea)
+![image](https://github.com/Lucasrx6/AngCRUD1/assets/86980974/354b00dd-4027-47bb-871e-0af69c837497)
+
 
 _______________________________________________
 
