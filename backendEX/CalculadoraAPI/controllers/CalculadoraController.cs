@@ -1,5 +1,5 @@
-using System;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace CalculadoraAPI.Controllers
 {
@@ -7,43 +7,51 @@ namespace CalculadoraAPI.Controllers
     [ApiController]
     public class CalculadoraController : ControllerBase
     {
-        public class Calculo
-        {
-            public double Numero1 { get; set; }
-            public double Numero2 { get; set; }
-            public string Operacao { get; set; }
-        }
-
         [HttpPost]
-        public ActionResult<double> Post(Calculo calculo)
+        public IActionResult Post([FromBody] Calculo calculo)
         {
-            double resultado = 0;
-            switch (calculo.Operacao)
+            try
             {
-                case "soma":
-                    resultado = calculo.Numero1 + calculo.Numero2;
-                    break;
-                case "subtracao":
-                    resultado = calculo.Numero1 - calculo.Numero2;
-                    break;
-                case "multiplicacao":
-                    resultado = calculo.Numero1 * calculo.Numero2;
-                    break;
-                case "divisao":
-                    if (calculo.Numero2 != 0)
-                    {
-                        resultado = calculo.Numero1 / calculo.Numero2;
-                    }
-                    else
-                    {
-                        return BadRequest("Divisão por zero não é permitida.");
-                    }
-                    break;
-                default:
-                    return BadRequest("Operação desconhecida.");
-            }
+                double resultado = 0;
 
-            return resultado;
+                switch (calculo.Operacao)
+                {
+                    case "+":
+                        resultado = calculo.Numero1 + calculo.Numero2;
+                        break;
+                    case "-":
+                        resultado = calculo.Numero1 - calculo.Numero2;
+                        break;
+                    case "*":
+                        resultado = calculo.Numero1 * calculo.Numero2;
+                        break;
+                    case "/":
+                        if (calculo.Numero2 != 0)
+                        {
+                            resultado = calculo.Numero1 / calculo.Numero2;
+                        }
+                        else
+                        {
+                            return BadRequest("Divisão por zero não é permitida.");
+                        }
+                        break;
+                    default:
+                        return BadRequest("Operação inválida.");
+                }
+
+                return Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
+    }
+
+    public class Calculo
+    {
+        public double Numero1 { get; set; }
+        public double Numero2 { get; set; }
+        public string Operacao { get; set; }
     }
 }
