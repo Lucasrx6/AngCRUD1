@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
+import { HttpClient } from '@angular/common/http'; // Importe o HttpClient
 
 @Component({
   selector: 'app-calculadora',
@@ -16,6 +17,8 @@ import { MatInputModule } from '@angular/material/input'
 export class CalculadoraComponent {
   tela = '';
 
+  constructor(private http: HttpClient) { }
+
   DigitoTela(value: string) {
     this.tela += value;
   }
@@ -25,11 +28,28 @@ export class CalculadoraComponent {
   }
 
   calculaResultado() {
-    try {
-      this.tela = eval(this.tela);
-    } catch (error) {
-      this.tela = 'Erro';
-    }
+    // Separe a expressão em números e operação
+    const [numero1, operacao, numero2] = this.tela.split(' ');
+
+    // Crie o objeto de cálculo
+    const calculo = {
+      Numero1: parseFloat(numero1),
+      Numero2: parseFloat(numero2),
+      Operacao: operacao
+    };
+
+    // Faça uma solicitação POST para a API
+    this.http.post('http://localhost:5000/api/calculadora', calculo)
+      .subscribe(
+        resultado => {
+          // Exiba o resultado
+          this.tela = resultado.toString();
+        },
+        error => {
+          this.tela = 'Erro';
+          console.error('Erro:', error);
+        }
+      );
   }
 }
 
