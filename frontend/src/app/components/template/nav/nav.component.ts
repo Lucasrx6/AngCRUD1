@@ -10,13 +10,15 @@ import { ProdutoCreateComponent } from '../../produto/produto-create/produto-cre
 import { MatButtonModule } from '@angular/material/button';
 import { CalculadoraComponent } from '../../views/calculadora/calculadora.component';
 import { CalendarioComponent } from '../../views/calendario/calendario.component';
+import { GasolinaComponent } from '../../views/gasolina/gasolina.component';
+import { CalculoComponent } from '../../gasolina/calculo/calculo.component';
 
 @Component({
   selector: 'app-nav',
   standalone: true,
   imports: [CommonModule, MatSidenavModule, MatListModule, HomeComponent, ProdutocrudComponent, 
     RouterOutlet, RouterModule, ProdutoCreateComponent, MatButtonModule, CalculadoraComponent,
-  CalendarioComponent],
+  CalendarioComponent, GasolinaComponent, CalculoComponent],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css'
 })

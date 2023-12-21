@@ -1,0 +1,24 @@
+<mat-card class="home mat-elevation-z8">
+    <mat-card-title>Calculo Simples</mat-card-title>
+</mat-card>
+
+<mat-card class="create mat-elevation-z8">
+    <form>
+
+        <mat-form-field>
+            <input matInput  name="nome">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput name="valor">
+        </mat-form-field>
+        
+    </form>
+
+
+    <mat-card-actions>
+        <button mat-raised-button color="primary"> Salvar </button>
+        <button mat-raised-button color="warn" (click) ="cancela()"> Cancelar </button>
+    </mat-card-actions>
+</mat-card>
+

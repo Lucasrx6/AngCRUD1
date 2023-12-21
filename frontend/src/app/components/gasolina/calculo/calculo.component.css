@@ -1,0 +1,20 @@
+.home{
+    margin: 1.4rem;
+    padding: .5rem;
+}
+
+.create{
+    margin: 1.4rem;
+    padding: .5rem;
+}
+
+.create form {
+    display: flex;
+    flex-direction: column;
+}
+
+.create button {
+    padding-right: 10px;
+    margin-right: 10px;
+    margin-top: 15px;
+}

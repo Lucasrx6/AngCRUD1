@@ -10,6 +10,8 @@ import { CalendarioComponent } from './components/views/calendario/calendario.co
 import { ProdutoUpdateComponent } from './components/produto/produto-update/produto-update.component';
 import { ProdutoDeleteComponent } from './components/produto/produto-delete/produto-delete.component';
 import { CalendarioCreateComponent } from './components/calendario/calendario-create/calendario-create.component';
+import { GasolinaComponent } from './components/views/gasolina/gasolina.component';
+import { CalculoComponent } from './components/gasolina/calculo/calculo.component';
 
 export const routes: Routes = [
     {path: 'header', component: HeaderComponent},
@@ -26,5 +28,7 @@ export const routes: Routes = [
     {path: "produtos/create", component: ProdutoCreateComponent},
     {path: "produtos/produto-update/:id", component: ProdutoUpdateComponent},
     {path: "produtos/produto-delete/:id", component: ProdutoDeleteComponent},
-    {path: "calendario/calendario-create", component: CalendarioCreateComponent}
+    {path: "calendario/calendario-create", component: CalendarioCreateComponent},
+    {path: "gasolina", component: GasolinaComponent},
+    {path: "gasolina/calculo", component: CalculoComponent}
 ];
