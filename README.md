@@ -20,15 +20,17 @@ Ele é uma maneira de demonstrar meu trabalho e compartilhar meus projetos com o
 
 ### Tarefa Calculadora:
 ![image](https://github.com/Lucasrx6/AngCRUD1/assets/86980974/d7ad8de5-b333-4a13-bbb7-925d796213d4)
+- Nessa tarefa, faço a integração do FrontEnd e BackEnd, a entrada do calculo é realizada no frontend e a operação é realizada no backend.
+- Observação: Foi criado 3 backend. Um feito e Node, que opera na porta 5021, Outro .NET, que também funciona na mesma porta.
 
 
 ### Tarefa Calendario:
 ![image](https://github.com/Lucasrx6/AngCRUD1/assets/86980974/d0ccd4e4-ac57-4b00-9163-5819c6ebd64a)
-
+- Essa tarefa tem o objetivo de implementar o Full Calendar do NPM.
 
 ### Tarefa CRUD:
 ![image](https://github.com/Lucasrx6/AngCRUD1/assets/86980974/354b00dd-4027-47bb-871e-0af69c837497)
-
+- Essa tarefa tem o objetivo de realizar uma operação CRUD.
 
 _______________________________________________
 
